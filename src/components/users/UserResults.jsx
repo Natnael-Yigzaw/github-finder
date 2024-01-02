@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import UserItem from "./UserItem";
 import Spinner from "../layouts/Spinner";
 
 const UserResults = () => {
@@ -26,7 +27,7 @@ const UserResults = () => {
       {loading ? (
         <Spinner />
       ) : (
-        results.map((user, index) => <h3 key={index}>{user.login}</h3>)
+        results.map((user) => <UserItem key={user.id} user={user} />)
       )}
     </div>
   );
