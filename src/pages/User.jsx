@@ -1,4 +1,4 @@
-import { FaCodepen, FaStore, FaUserFriends, FaUsers } from "react-icons/fa";
+import { FaBook, FaUserFriends, FaUsers } from "react-icons/fa";
 import { useEffect, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 import Spinner from "../components/layouts/Spinner";
@@ -34,7 +34,6 @@ function User() {
     followers,
     following,
     public_repos,
-    public_gists,
     hireable,
   } = user;
 
@@ -75,7 +74,7 @@ function User() {
                   <div className="mx-1 badge badge-info">Hireable</div>
                 )}
               </h1>
-              <p>{bio}</p>
+              <p className="mt-2">{bio}</p>
               <div className="mt-4 card-actions">
                 <a
                   href={html_url}
@@ -147,21 +146,11 @@ function User() {
 
             <div className="stat">
               <div className="stat-figure text-secondary">
-                <FaCodepen className="text-3xl md:text-5xl" />
+                <FaBook className="text-3xl md:text-5xl" />
               </div>
               <div className="stat-title pr-5">Public Repos</div>
               <div className="stat-value pr-5 text-3xl md:text-4xl">
                 {public_repos}
-              </div>
-            </div>
-
-            <div className="stat">
-              <div className="stat-figure text-secondary">
-                <FaStore className="text-3xl md:text-5xl" />
-              </div>
-              <div className="stat-title pr-5">Public Gists</div>
-              <div className="stat-value pr-5 text-3xl md:text-4xl">
-                {public_gists}
               </div>
             </div>
           </div>
